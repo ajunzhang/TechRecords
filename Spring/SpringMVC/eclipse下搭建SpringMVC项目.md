@@ -12,6 +12,7 @@
 
 * 赋予工程的springmvc特性，配置web.xml，使其具有springmvc特性，主要配置两处，一个是ContextLoaderListener，一个是DispatcherServlet。<br/>
 
+```
 	<!-- 配置contextConfigLocation -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
@@ -40,6 +41,7 @@
 		<servlet-name>web-context</servlet-name>
 		<url-pattern>/.*</url-pattern>
 	</servlet-mapping>
+```
 
 * 配置ContextLoaderListener表示，该工程要以spring的方式启动。启动时会默认在/WEB-INF目录下查找 applicationContext.xml作为spring容器的配置文件，这里可以初始化一些bean，如DataSource等<br/>
 
@@ -47,7 +49,7 @@
 
 * 在Tomcat安装目录下找到\conf\Catalina\localhost目录。复制粘贴一个xml文件，文件名称就是项目的上下文。主要内容是修改docBase属性值，选择使用的数据库。<br/>
 
-
+```
 	<Context reloadable="true" docBase="E:\JAVA_WORKSPACE\SpringMVCDemo2\WebContent" >
 		<Loader className="org.apache.catalina.loader.DevLoader" reloadable="true" debug="1" useSystemClassLoaderAsParent="false" />
 		<!-- MySQL -->
@@ -69,6 +71,7 @@
 			 maxPoolPreparedStatementPerConnectionSize="20"
 			 filters="wall,stat,log4j"/>
 	</Context>
+```
 
 * 启动Tomcat，浏览器输入地址
 

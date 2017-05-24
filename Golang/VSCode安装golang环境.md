@@ -19,7 +19,7 @@
 
 如下图
 
-![][images/5.24.1.png]
+![](images/5.24.1.png)
 
 
 * 为了使用F5调试，我们还需要dlv工具。且go install
@@ -30,7 +30,7 @@
 
 * 配置setting.json文件
 
-![][images/5.24.2.png]
+![](images/5.24.2.png)
 
 end
 

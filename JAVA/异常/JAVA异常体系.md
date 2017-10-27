@@ -4,4 +4,4 @@
 
 > java异常层次结构图
 
-![image](images/JAVA异常层次结构图.jpg)
+![JAVA异常层次结构图](images/001.jpg)

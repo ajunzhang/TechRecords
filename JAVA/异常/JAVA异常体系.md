@@ -4,4 +4,4 @@
 
 > java异常层次结构图
 
-![image](http://note.youdao.com/favicon.ico)
+![image](./images/JAVA异常层次结构图.jpg)

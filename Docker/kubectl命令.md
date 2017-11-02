@@ -6,20 +6,25 @@
  > namespace是一个重要的概念，通过系统内部的对象分配到不同namespace中，形成逻辑上分组的不同项目、小组和用户组，便于不同的分组在共享使用整个集群的资源的同时还能被分别管理。
 
  * 1：查看namespace为cuss的所有rc
- kubectl get rc -n <cuss>
- 或者查看所有的
- kubectl get rc --all-namespaces
+
+    kubectl get rc -n <cuss>
+    或者查看所有的
+    kubectl get rc --all-namespaces
 
  * 2: 查看namespace为cuss的所有pod
- kubectl get pod -n <cuss>
- 或者查看所有命名空间下的pod
- kubectl get pod --all-namespaces
+    
+    kubectl get pod -n <cuss>
+    或者查看所有命名空间下的pod
+    kubectl get pod --all-namespaces
 
  * 3: 查看日志
-kubectl logs -f cashform-controller-2tmfh  -n cuss
+    
+    kubectl logs -f cashform-controller-2tmfh  -n cuss
 
 * 4: 删除pod
-kubectl delete pod -n cuss cusweb-controller-m4qnp
+    
+    kubectl delete pod -n cuss cusweb-controller-m4qnp
 
 * 5: 查看namespace
-kubectl get namespaces
+    
+    kubectl get namespaces

@@ -1,19 +1,19 @@
-#### EclipseÏÂ´î½¨SpringMVCÏîÄ¿
-* Ê×ÏÈĞÂ½¨Ò»¸öJavaproject<br/>
+#### Eclipseä¸‹æ­å»ºSpringMVCé¡¹ç›®
+* é¦–å…ˆæ–°å»ºä¸€ä¸ªJavaproject<br/>
 
-* µã»÷project facts£¬½«SEÏîÄ¿convert³ÉwebÏîÄ¿<br/>
+* ç‚¹å‡»project factsï¼Œå°†SEé¡¹ç›®convertæˆwebé¡¹ç›®<br/>
 
 ![](images/1.png)
 
-* eclipse»á×Ô¶¯Ìí¼ÓÒ»¸öwebContentÄ¿Â¼<br/>
+* eclipseä¼šè‡ªåŠ¨æ·»åŠ ä¸€ä¸ªwebContentç›®å½•<br/>
 
 ![](images/2.png)
 
 
-* ¸³Óè¹¤³ÌµÄspringmvcÌØĞÔ£¬ÅäÖÃweb.xml£¬Ê¹Æä¾ßÓĞspringmvcÌØĞÔ£¬Ö÷ÒªÅäÖÃÁ½´¦£¬Ò»¸öÊÇContextLoaderListener£¬Ò»¸öÊÇDispatcherServlet¡£<br/>
+* èµ‹äºˆå·¥ç¨‹çš„springmvcç‰¹æ€§ï¼Œé…ç½®web.xmlï¼Œä½¿å…¶å…·æœ‰springmvcç‰¹æ€§ï¼Œä¸»è¦é…ç½®ä¸¤å¤„ï¼Œä¸€ä¸ªæ˜¯ContextLoaderListenerï¼Œä¸€ä¸ªæ˜¯DispatcherServletã€‚<br/>
 
 ```
-	<!-- ÅäÖÃcontextConfigLocation -->
+	<!-- é…ç½®contextConfigLocation -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath*:applicationContext.xml</param-value>
@@ -24,10 +24,10 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
-	<!-- ÅäÖÃDispatcherServlet±íÊ¾£¬¸Ã¹¤³Ì½«²ÉÓÃspringmvcµÄ·½Ê½¡£Æô¶¯Ê±Ò²»áÄ¬ÈÏÔÚ/WEB-INFÄ¿Â¼ÏÂ²éÕÒXXX-servlet.xml×÷ÎªÅäÖÃÎÄ¼ş£¬
-        XXX¾ÍÊÇDispatcherServletµÄÃû×Ö£¬¸ÃÎÄ¼şÖĞ½«ÅäÖÃÁ½ÏîÖØÒªµÄmvcÌØĞÔ£ºHandlerMapping,¸ºÔğÎªDispatcherServletÕâ¸öÇ°¶Ë¿ØÖÆÆ÷µÄÇëÇó²éÕÒController£»
-        ViewResolver,¸ºÔğÎªDispatcherServlet²éÕÒModelAndViewµÄÊÓÍ¼½âÎöÆ÷¡£
-                     ´Ë´¦Ê¹ÓÃÖ¸¶¨µÄÅäÖÃÎÄ¼şspring-mvc.xml -->
+	<!-- é…ç½®DispatcherServletè¡¨ç¤ºï¼Œè¯¥å·¥ç¨‹å°†é‡‡ç”¨springmvcçš„æ–¹å¼ã€‚å¯åŠ¨æ—¶ä¹Ÿä¼šé»˜è®¤åœ¨/WEB-INFç›®å½•ä¸‹æŸ¥æ‰¾XXX-servlet.xmlä½œä¸ºé…ç½®æ–‡ä»¶ï¼Œ
+        XXXå°±æ˜¯DispatcherServletçš„åå­—ï¼Œè¯¥æ–‡ä»¶ä¸­å°†é…ç½®ä¸¤é¡¹é‡è¦çš„mvcç‰¹æ€§ï¼šHandlerMapping,è´Ÿè´£ä¸ºDispatcherServletè¿™ä¸ªå‰ç«¯æ§åˆ¶å™¨çš„è¯·æ±‚æŸ¥æ‰¾Controllerï¼›
+        ViewResolver,è´Ÿè´£ä¸ºDispatcherServletæŸ¥æ‰¾ModelAndViewçš„è§†å›¾è§£æå™¨ã€‚
+                     æ­¤å¤„ä½¿ç”¨æŒ‡å®šçš„é…ç½®æ–‡ä»¶spring-mvc.xml -->
 	<servlet>
 		<servlet-name>web-context</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -43,11 +43,11 @@
 	</servlet-mapping>
 ```
 
-* ÅäÖÃContextLoaderListener±íÊ¾£¬¸Ã¹¤³ÌÒªÒÔspringµÄ·½Ê½Æô¶¯¡£Æô¶¯Ê±»áÄ¬ÈÏÔÚ/WEB-INFÄ¿Â¼ÏÂ²éÕÒ applicationContext.xml×÷ÎªspringÈİÆ÷µÄÅäÖÃÎÄ¼ş£¬ÕâÀï¿ÉÒÔ³õÊ¼»¯Ò»Ğ©bean£¬ÈçDataSourceµÈ<br/>
+* é…ç½®ContextLoaderListenerè¡¨ç¤ºï¼Œè¯¥å·¥ç¨‹è¦ä»¥springçš„æ–¹å¼å¯åŠ¨ã€‚å¯åŠ¨æ—¶ä¼šé»˜è®¤åœ¨/WEB-INFç›®å½•ä¸‹æŸ¥æ‰¾ applicationContext.xmlä½œä¸ºspringå®¹å™¨çš„é…ç½®æ–‡ä»¶ï¼Œè¿™é‡Œå¯ä»¥åˆå§‹åŒ–ä¸€äº›beanï¼Œå¦‚DataSourceç­‰<br/>
 
-* ÅäÖÃDispatcherServlet±íÊ¾£¬¸Ã¹¤³Ì½«²ÉÓÃspringmvcµÄ·½Ê½¡£Æô¶¯Ê±Ò²»áÄ¬ÈÏÔÚ/WEB-INFÄ¿Â¼ÏÂ²éÕÒXXX- servlet.xml×÷ÎªÅäÖÃÎÄ¼ş£¬XXX¾ÍÊÇDispatcherServletµÄÃû×Ö£¬¸ÃÎÄ¼şÖĞ½«ÅäÖÃÁ½ÏîÖØÒªµÄmvcÌØĞÔ£ºViewResolver,¸ºÔğÎªDispatcherServlet²éÕÒModelAndViewµÄÊÓÍ¼½âÎöÆ÷¡£ÕâÀïÎÒÃÇÊ¹ÓÃÖ¸¶¨µÄxmlÅäÖÃÎÄ¼şspring-mvc.xml<br/>
+* é…ç½®DispatcherServletè¡¨ç¤ºï¼Œè¯¥å·¥ç¨‹å°†é‡‡ç”¨springmvcçš„æ–¹å¼ã€‚å¯åŠ¨æ—¶ä¹Ÿä¼šé»˜è®¤åœ¨/WEB-INFç›®å½•ä¸‹æŸ¥æ‰¾XXX- servlet.xmlä½œä¸ºé…ç½®æ–‡ä»¶ï¼ŒXXXå°±æ˜¯DispatcherServletçš„åå­—ï¼Œè¯¥æ–‡ä»¶ä¸­å°†é…ç½®ä¸¤é¡¹é‡è¦çš„mvcç‰¹æ€§ï¼šViewResolver,è´Ÿè´£ä¸ºDispatcherServletæŸ¥æ‰¾ModelAndViewçš„è§†å›¾è§£æå™¨ã€‚è¿™é‡Œæˆ‘ä»¬ä½¿ç”¨æŒ‡å®šçš„xmlé…ç½®æ–‡ä»¶spring-mvc.xml<br/>
 
-* ÔÚTomcat°²×°Ä¿Â¼ÏÂÕÒµ½\conf\Catalina\localhostÄ¿Â¼¡£¸´ÖÆÕ³ÌùÒ»¸öxmlÎÄ¼ş£¬ÎÄ¼şÃû³Æ¾ÍÊÇÏîÄ¿µÄÉÏÏÂÎÄ¡£Ö÷ÒªÄÚÈİÊÇĞŞ¸ÄdocBaseÊôĞÔÖµ£¬Ñ¡ÔñÊ¹ÓÃµÄÊı¾İ¿â¡£<br/>
+* åœ¨Tomcatå®‰è£…ç›®å½•ä¸‹æ‰¾åˆ°\conf\Catalina\localhostç›®å½•ã€‚å¤åˆ¶ç²˜è´´ä¸€ä¸ªxmlæ–‡ä»¶ï¼Œæ–‡ä»¶åç§°å°±æ˜¯é¡¹ç›®çš„ä¸Šä¸‹æ–‡ã€‚ä¸»è¦å†…å®¹æ˜¯ä¿®æ”¹docBaseå±æ€§å€¼ï¼Œé€‰æ‹©ä½¿ç”¨çš„æ•°æ®åº“ã€‚<br/>
 
 ```
 	<Context reloadable="true" docBase="E:\JAVA_WORKSPACE\SpringMVCDemo2\WebContent" >
@@ -73,6 +73,6 @@
 	</Context>
 ```
 
-* Æô¶¯Tomcat£¬ä¯ÀÀÆ÷ÊäÈëµØÖ·
+* å¯åŠ¨Tomcatï¼Œæµè§ˆå™¨è¾“å…¥åœ°å€
 
 ![](images/3.png)

@@ -1,10 +1,10 @@
-#### eclipseÖĞµÄServiceÆô¶¯webÏîÄ¿
+#### eclipseä¸­çš„Serviceå¯åŠ¨webé¡¹ç›®
 
-Ä¿Ç°Óöµ½Ò»¸öÎÊÌâ£¬Í¨¹ıeclipseµÄServiceÆô¶¯ÏîÄ¿£¬ÏàÍ¬µÄURLÂ·¾¶·ÃÎÊÕâÀïÉúĞ§¡£
+ç›®å‰é‡åˆ°ä¸€ä¸ªé—®é¢˜ï¼Œé€šè¿‡eclipseçš„Serviceå¯åŠ¨é¡¹ç›®ï¼Œç›¸åŒçš„URLè·¯å¾„è®¿é—®è¿™é‡Œç”Ÿæ•ˆã€‚
 
 http://localhost:8080/SpringMVCDemo2/test/viewName/
 
-ÔÚD:\Apache\apache-tomcat-7.0.75\conf\Catalina\localhostÂ·¾¶ÏÂĞÂ½¨Ò»¸öxmlÎÄ¼ş
+åœ¨D:\Apache\apache-tomcat-7.0.75\conf\Catalina\localhostè·¯å¾„ä¸‹æ–°å»ºä¸€ä¸ªxmlæ–‡ä»¶
 
 ![](images/7.png)
 

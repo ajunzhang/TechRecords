@@ -1,0 +1,7 @@
+### BeanNameAware接口
+
+官方给出的解释：实现该接口的bean会意识到自己在beanfactory的的名字，注意虽然这并不值得推荐一个对象依赖它的名字，因为名字只是这个bean的一个脆弱的依赖或者一个额外的配置，也有可能这个bean的名称只是用于Spring API的一个不必要的依赖。
+
+这个接口表面上的作用就是让实现这个接口的bean知道自己在spring容器里的名字，而且听官方的意思是这个接口更多的使用在spring的框架代码中，实际开发环境应该不建议使用，因为spring认为bean的名字与bean的联系并不是很深，（的确，抛开spring API而言，我们如果获取了该bean的名字，其实意义不是很大，我们没有获取该bean的class，只有该bean的名字，我们也无从下手，相反，因为bean的名称在spring容器中可能是该bean的唯一标识，也就是说再beanDefinitionMap中，key值就是这个name，spring可以根据这个key值获取该bean的所有特性）所以spring说这个不是非必要的依赖。
+
+这个接口对于spring容器来说，就是可能在spring容器初始化的时候，某些类需要告诉spring容器自己的名称吧

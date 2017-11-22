@@ -14,3 +14,5 @@ public class Config {
 
 }
 ```
+
+@Bean注解表明提供了bean定义信息

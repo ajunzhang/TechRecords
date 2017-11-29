@@ -1,0 +1,2 @@
+### BeanDefinition接口
+BeanDefinition接口是将XML中bean的定义转换为容器内部的表示。并且将这些BeanDefinition注册到BeanDefinitionRegistry中，可以将BeanDefinitionRegistry看做是XML信息的内存数据库。容器如果要读取xml配置信息直接从BeanDefinitionRegistry中读取即可。BeanDefinition只在容器启动时加载并解析。

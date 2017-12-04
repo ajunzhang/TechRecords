@@ -1,0 +1,11 @@
+### pod
+
+Pod的生命周期通常比较短，只要出现了异常，就会创建一个新的Pod来代替它。那容器产生的数据呢？容器内的数据会随着Pod消亡而自动消失。Volume就是为了持久化容器数据而生，比如可以为redis容器指定一个hostPath来存储redis数据：
+
+前面虽然创建了Pod，但是在kubernetes中，Pod的IP地址会随着Pod的重启而变化，并不建议直接拿Pod的IP来交互。那如何来访问这些Pod提供的服务呢？使用Service。Service为一组Pod（通过labels来选择）提供一个统一的入口，并为它们提供负载均衡和自动服务发现。
+
+
+> Kubernetes作为一个面向应用的集群管理工具，需要确保容器在部署后确实处在正常的运行状态。Kubernetes提供了两种探针（Probe，支持exec、tcp和http方式）来探测容器的状态：
+
+* LivenessProbe：探测应用是否处于健康状态，如果不健康则删除重建改容器
+* ReadinessProbe：探测应用是否启动完成并且处于正常服务状态，如果不正常则更新容器的状态

@@ -1,0 +1,1 @@
+java -jar smartms-generator-1.3.0-SNAPSHOT-jar-with-dependencies.jar -file E:\Generator\cus-returned-records-desc.json

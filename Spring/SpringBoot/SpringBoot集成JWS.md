@@ -22,6 +22,24 @@ public SimpleJaxWsServiceExporter simpleJaxWsServiceExporter(){
 }
 ```
 
+在接口处要标明一下WS服务名称
+```
+/**
+ * Description:Rms代理的Web服務接口
+ * @author sjZhang
+ * @date 2017年12月12日下午4:22:04
+ */
+@Service
+@WebService(serviceName="RmsAgent")//要标明serviceName
+public interface IRmsAgentService
+```
+实现类也要声明一下继承的接口，同时用Component标记为bean自动装配到容器中
+```
+@Component
+@WebService(endpointInterface="com.fiberhome.endpoint.IRmsAgentService")
+public class RmsAgentServiceMockImpl implements IRmsAgentService
+```
+
 然后就和用Spring 平常的bean一样可以注入到业务类中。
 
 * 4 浏览器访问wsdl文件

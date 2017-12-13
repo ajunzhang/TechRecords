@@ -1,6 +1,6 @@
 ### BeanPostProcessor接口的作用
 
-> BeanPostProcessor，这个接口，是Spring初始化bean时对外暴露的扩展点。
+> BeanPostProcessor，这个接口，是Spring初始化bean时对外暴露的扩展点。称之为bean后置处理器。
 
 BeanPostProcessor，可以在spring容器实例化bean之后，在执行bean的初始化方法前后，添加一些自己的处理逻辑。这里说的初始化方法，指的是下面两种：
 1 bean实现了InitializingBean接口，对应的方法为afterPropertiesSet

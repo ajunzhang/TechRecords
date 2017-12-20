@@ -126,3 +126,8 @@ show profile for query (查询语句id);
 create index aIndex on tablename(columnname);
 ```
 根据explain检测出mysql内部执行查询的步骤和具体参数来优化自己的select语句
+
+```
+文章来源：Edward_jie,http://www.cnblogs.com/promise-7/archive/2012/05/25/2517356.html
+http://www.2cto.com/database/201501/369135.html
+```

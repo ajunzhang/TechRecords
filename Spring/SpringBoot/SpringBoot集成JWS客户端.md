@@ -5,6 +5,10 @@
 ```
 wsimport -s . http://localhost:8088/ccv3/RmsAgent?wsdl
 ```
+生成指定编码格式utf-8
+```
+wsimport -encoding utf-8 -s . http://10.110.200.104:9980/ccv3/RmsAgent?wsdl
+```
 会生成客户端代码，包括pojo,service Interface,service impl.
 
 * 2 如果客户端要用Spring框架实现，就要借助一个重要的类<code>JaxWsProxyFactoryBean</code>,使用该类可以在Spring中装配Spring web服务，它是一个工厂 bean 能生成一个知道如何和SOAP Web服务交互的代理。其中set的这些属性都能从wsdl文件中找到，注意一下setNamespaceUri()方法对应的属性为targetNamespace，其他的属性很明显可以找到。

@@ -1,0 +1,24 @@
+### SpringCloud如何侵入代码
+
+第一代微服务的代表就是SpringCloud框架，但是SpringCloud框架会对代码侵入。那这种侵入到底体现在哪些方面：
+
+- 服务治理（服务注册/发现）
+
+注意这里仍然使用的是SpringBoot框架，并和SpringBoot框架进行了集成，在pom.xml配置文件中增加了对SpringCLoud相关包和组件的依赖。在原有的接口API定义的基础上，增加@EnableDiscoveryClient注解后，即可以让服务注册中心很轻松的发现服务提供方以及提供的服务。
+
+- 服务消费
+
+方式1 - Ribbon是一个基于HTTP和TCP客户端的负载均衡器。Ribbon可以在通过客户端中配置的ribbonServerList服务端列表去轮询访问以达到均衡负载的作用。当Ribbon与Eureka联合使用时，ribbonServerList会被DiscoveryEnabledNIWSServerList重写，扩展成从Eureka注册中心中获取服务端列表。
+
+方式2 - Feign是一个声明式的Web Service客户端，它使得编写Web Serivce客户端变得更加简单。我们只需要使用Feign来创建一个接口并用注解来配置它既可完成。它具备可插拔的注解支持，包括Feign注解和JAX-RS注解。Feign也支持可插拔的编码器和解码器。Spring Cloud为Feign增加了对Spring MVC注解的支持，还整合了Ribbon和Eureka来提供均衡负载的HTTP客户端实现。
+
+- 断路器
+
+首先在pom.xml文件中增加引入对hystrix依赖，同时在消费端Application主类上增加@EnableCircuitBreaker注解开启断路器功能。注意原有的服务消费方式也涉及到修改，增加了服务Callback的回调函数。
+
+- 服务网关
+
+服务网关是微服务架构中一个不可或缺的部分。通过服务网关统一向外系统提供REST API的过程中，除了具备服务路由、均衡负载功能之外，它还具备了权限控制等功能。Spring Cloud Netflix中的Zuul就担任了这样的一个角色，为微服务架构提供了前门保护的作用，同时将权限控制这些较重的非业务逻辑内容迁移到服务路由层面，使得服务集群主体能够具备更高的可复用性和可测试性。
+
+
+综合之上可以发现SpringCloud一般是通过注解来侵入业务服务的。如果从中间件和基础框架的角度来看的话，服务治理，熔断等对业务应该是透明的。业务程序员不需要关注服务治理框架的使用，专注于业务代码即可。所以基于这种情况第二段微服务框架服务网关出现了，主要代表就是linkerd,Envoy,Istio,Conduit.

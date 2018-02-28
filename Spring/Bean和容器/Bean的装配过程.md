@@ -34,31 +34,31 @@ Spring 容器中的 Bean 是有生命周期的，Spring 允许 Bean 在初始化
 public class BikeBean implements InitializingBean, DisposableBean {
 
 	public void init() {
-		System.out.println("=== BikeBean ===init ====");
+		System.out.println("@Bean(initMethod=)注解 ===init ====");
 	}
 
 	public void des() {
-		System.out.println("===== BikeBean ===destroy ====");
+		System.out.println("@Bean(destroyMethod=)注解 ===destroy ====");
 	}
 
 	@Override
 	public void destroy() throws Exception {
-		System.out.println("容器关闭的时候调用BikeBean销毁方法");
+		System.out.println("实现接口DisposableBean，容器关闭的时候调用BikeBean销毁方法");
 	}
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		System.out.println("实例化之后调用BikeBean初始化方法");
+		System.out.println("实现接口InitializingBean，实例化之后调用BikeBean初始化方法");
 	}
 
 	@PostConstruct
 	public void initial() {
-		System.out.println("......initial......");
+		System.out.println("@PostConstruct...initial......");
 	}
 
 	@PreDestroy
 	public void close() {
-		System.out.println("......close.........");
+		System.out.println("@PreDestroy...close.........");
 	}
 
 }
@@ -100,15 +100,15 @@ public class BikeBeanTest {
 
 运行结果如下：
 ```
-......initial......
-实例化之后调用BikeBean初始化方法
-=== BikeBean ===init ====
+@PostConstruct...initial......
+实现接口InitializingBean，实例化之后调用BikeBean初始化方法
+@Bean(initMethod=)注解 ===init ====
 
-......close.........
-容器关闭的时候调用BikeBean销毁方法
-===== BikeBean ===destroy ====
+@PreDestroy...close.........
+实现接口DisposableBean，容器关闭的时候调用BikeBean销毁方法
+@Bean(destroyMethod=)注解 ===destroy ====
 ```
 
 可见先后顺序为
-Bean在实例化的过程中：Constructor > @PostConstruct >InitializingBean > init-method
+Bean在实例化的过程中: @PostConstruct >InitializingBean > init-method
 Bean在销毁的过程中：@PreDestroy > DisposableBean > destroy-method

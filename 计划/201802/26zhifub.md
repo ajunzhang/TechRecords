@@ -47,6 +47,8 @@
 
 - MS框架如何实现负载均衡，SpringCloudGateway实现负载均衡用了什么算法，如何实现的？
 
+> answer: 负载均衡是在网关实现，网关注册到注册中心，就能获取各个微服务实例注册到注册中心的数据。其实就是一个双层map。gateway基于Netflix 的Zuul。在Zuul中包含了ribbon。而ribbon就是用于实现请求转发的机制。基于一些随机算法或者加权计算的算法实现请求的负载均衡。
+
 - 平时学习什么新技术，如何学习开源项目。
 
 - 看了哪些源码，jdk的 String StringBuffer StringBuild源码区别。

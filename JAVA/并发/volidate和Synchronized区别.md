@@ -25,3 +25,8 @@
 * 一、volatile是变量修饰符，而synchronized则作用于一段代码或方法。
 
 * 二、volatile只是在线程内存和“主”内存间同步某个变量的值；而synchronized通过锁定和解锁某个监视器同步所有变量的值。显然synchronized要比volatile消耗更多资源
+
+
+> 内存同步谈volatile 和 synchronized
+
+* 同步操作的性能开销包括很多方面，主要区分有竞争的同步和无竞争的同步，其中volatile是无竞争的。
